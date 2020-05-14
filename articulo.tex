@@ -1,0 +1,200 @@
+\documentclass[twoside,twocolumn]{article}
+
+\usepackage{blindtext} % Package to generate dummy text throughout this template 
+\usepackage{graphicx}
+\usepackage[sc]{mathpazo} % Use the Palatino font
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\linespread{1.05} % Line spacing - Palatino needs more space between lines
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+
+\usepackage[english]{babel} % Language hyphenation and typographical rules
+
+\usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry} % Document margins
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
+\usepackage{booktabs} % Horizontal rules in tables
+
+\usepackage{lettrine} % The lettrine is the first enlarged letter at the beginning of the text
+
+\usepackage{enumitem} % Customized lists
+\setlist[itemize]{noitemsep} % Make itemize lists more compact
+
+\usepackage{abstract} % Allows abstract customization
+\renewcommand{\abstractnamefont}{\normalfont\bfseries} % Set the "Abstract" text to bold
+\renewcommand{\abstracttextfont}{\normalfont\small\itshape} % Set the abstract itself to small italic text
+
+\usepackage{titlesec} % Allows customization of titles
+\renewcommand\thesection{\Roman{section}} % Roman numerals for the sections
+\renewcommand\thesubsection{\roman{subsection}} % roman numerals for subsections
+\titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{} % Change the look of the section titles
+\titleformat{\subsection}[block]{\large}{\thesubsection.}{1em}{} % Change the look of the section titles
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+\fancyhead[C]{Metodologias de Calidad de Software $\bullet$ Mayo 2019 $\bullet$ } % Custom header text
+\fancyfoot[RO,LE]{\thepage} % Custom footer text
+
+\usepackage{titling} % Customizing the title section
+
+\usepackage{hyperref} % For hyperlinks in the PDF
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\setlength{\droptitle}{-4\baselineskip} % Move the title up
+
+\pretitle{\begin{center}\Huge\bfseries} % Article title formatting
+\posttitle{\end{center}} % Article title closing formatting
+\title{Metodologias de Calidad de Software} % Article title
+\author{Yaneth Aquino,gggg y jhhh}
+\date{\today} % Leave empty to omit a date
+\renewcommand{\maketitlehookd}{%
+\begin{abstract}
+\noindent The technologies are growing, extending and with this, new tools always appear to know and make use of them. In the present work we proposed to understand thoroughly the concepts of virtual machine and container and to make an analysis to both concepts. The result after the discussion is a critical appreciation of both concepts and a comparison to the context in which we find ourselves when using them.
+\end{abstract}
+}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+% Print the title
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE CONTENTS
+%----------------------------------------------------------------------------------------
+
+\section{Introduccion}
+
+\lettrine[nindent=0em,lines=3]{L}a virtualización ha sido identificada como una de las diez tecnologías estratégicas en el año 2010. Consiste en la extracción del software de una computadora, encapsulándolo en algo que llamaremos máquina virtual, que será ejecutada en una máquina física ajena a la anterior.
+
+
+
+
+%------------------------------------------------
+
+\section{Objetivos}
+
+\begin{itemize}
+\item Entender qué es una máquina virtual.
+\item Entender qué es un contenedor.
+\item Comparar ambos conceptos.
+\item Establecer un juicio acerca de las ofertas y el potencial de ambas.
+
+\end{itemize}
+
+
+
+
+%------------------------------------------------
+
+\section{Desarrollo}
+
+\subsection{¿Que es una maquina virtual?}
+
+Una máquina virtual es un software que emula un ordenador justo como si fuese uno real. 
+
+\begin{center}
+	\includegraphics[width=5cm]{./Imagenes/virtualizacion} 
+	\end{center}
+
+
+
+
+\subsection{¿Que es un contenedor?}
+
+Los contenedores son aplicaciones y servicios autónomos que encapsulan todas las dependencias para que sean fácilmente implementables y actualizables.\\
+Los contenedores son aplicaciones independientes, empaquetadas con sus dependencias.\\
+Los contenedores se distribuyen fácilmente a través de una plataforma virtual.
+
+\begin{itemize}
+\item Docker
+\\ Éste contenedor empaqueta todo lo necesario para que uno o más procesos (servicios o
+aplicaciones) funcionen: código, herramientas del sistema, bibliotecas del sistema, dependencias,
+etc.
+\\Usos de Docker
+\\Ya que los contenedores te dan un ambiente aislado del resto del sistema, las posibilidades de
+trabajo incluyen
+\\ \textbf{- Empaquetamiento y despliegue de aplicaciones automatizado y controlado}
+\\ \textbf{- Creación Ambientes de PaaS.}
+\\ \textbf{- Testing e integración continua}
+\\ \textbf{- Despliegue y escalamiento de aplicaciones y bases de datos.}
+
+\begin{center}
+	\includegraphics[width=5cm]{./Imagenes/docker} 
+	\end{center}
+
+Ventajas
+\\ \textbf{- Las instancias se inician en pocos segundos.}
+\\ \textbf{- Son fácilmente replicables.}
+\\ \textbf{- Es fácil de automatizar y de integrar en entornos de integración continua.}
+\\ \textbf{- Consumen menos recursos que las máquinas virtuales tradicionales.}
+\\ \textbf{- Ocupan mucho menos espacio.}
+\\ \textbf{-Permite aislar las dependencias de una aplicación de las instaladas en el host.}
+
+Desventajas
+\\ \textbf{- Sólo puede usarse de forma nativa en entornos Unix con Kernel igual o superior a 3.8.}
+\\ \textbf{- Sólo soporta arquitecturas de 64 bits.}
+\\ \textbf{- Como es relativamente nuevo, puede haber errores de código entre versiones.}
+\end{itemize} 
+
+\subsection{¿Diferencia entre maquinas virtuales y contenedores?}
+El objetivo principal de estas tecnologias, es la de dar un entorno de desarrollo con ciertas caracteristicas por lo que parecen estas tecnologias, maquinas virtuales y contenedores, donde la primera es una copia exacta del software y hardware, en cambio los contenedores no hay una copia si no que tienen los archivos necesarios para poder correr un determinado software.
+
+\begin{itemize}
+	\item Jerarquia maquina virtual
+	\\La primer gran diferencia es la jerarquia, forma de como estan constituidas. En el primero de los casos las maquinas virtuales estan constituidas por:
+	\\ \textbf{-El servidor o una computador}.
+	\\ \textbf{-El sistema operativo} que hospeda y administra los recursos del servidor o computador.
+	\\ \textbf{-El hypervisor} plataforma que monitoriea y controlas virtualizacion.
+	\\ \textbf{-Sistema virtualizado} sistema operativo que fue virtualizado (copia total de software y hardware).
+	\\ \textbf{-Bins/Libs} Binarios y librerias.
+	\\ \textbf{-App} Aplicacion a ejecutar.
+	\begin{center}
+	\includegraphics[width=5cm]{./Imagenes/jerarquia1} 
+	\end{center}
+\end{itemize} 
+
+\begin{itemize}
+	\item Jerarquia contenedor
+	\\ \textbf{-El servidor o una computador}.
+	\\ \textbf{-El sistema operativo} que hospeda y administra los recursos del servidor o computador.
+	\\ \textbf{-Docker Engine} virtualizacion a nivel del sistema operativo permite multiples instancias aisladas.
+	\\ \textbf{-Bins/Libs} Binarios y librerias.
+	\\ \textbf{-App} Aplicacion a ejecutar.
+	\begin{center}
+	\includegraphics[width=5cm]{./Imagenes/jerarquia2} 
+	\end{center}
+\end{itemize} 
+
+\begin{itemize}
+	\item Los contenedores permiten desplegar aplicaciones más rápido, arrancarlas y pararlas más rápido y aprovechar mejor los recursos de hardware.
+
+
+\end{itemize} 
+
+\section{Conclusiones}
+
+Para hablar de contenedores y virtualizadores, era necesario observar el crecimiento de las tecnologías y el cómo se han ido extendiendo. Cuanto más plataformas, cuantas más librerías, es más compleja la unificación de los recursos para el despliegue de una aplicación en todas las distribuciones. 
+%----------------------------------------------------------------------------------------
+%	REFERENCE LIST
+%----------------------------------------------------------------------------------------
+
+\begin{thebibliography}{99} % Bibliography - this is intentionally simple in this template
+
+\bibitem[Martin, 2011]{Diego Martin:2011dg}
+Martin, M.M,  y J.U (2011).
+\newblock Virtualización, una solución para la eficiencia,
+seguridad y administración de intranets
+\newblock {\em El profesional de la informacion}, 350.
+\newblock Contenedor de aplicaciones: Docker (2015)
+ 
+ 
+\end{thebibliography}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
